@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.jsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/client/index.jsx");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -218,27 +218,27 @@ eval("\r\nif (false) {}\r\nelse {\r\n    module.exports = __webpack_require__(/*
 
 /***/ }),
 
-/***/ "./src/Header.jsx":
-/*!************************!*\
-  !*** ./src/Header.jsx ***!
-  \************************/
+/***/ "./src/client/index.jsx":
+/*!******************************!*\
+  !*** ./src/client/index.jsx ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nexports.default = Header = function () {\r\n    return (react_1.default.createElement(\"div\", null, \"Hello React\"));\r\n};\r\n\n\n//# sourceURL=webpack:///./src/Header.jsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nvar react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\"));\r\nvar Header_1 = __webpack_require__(/*! ../shared/Header */ \"./src/shared/Header.jsx\");\r\nwindow.addEventListener('load', function () {\r\n    react_dom_1.default.hydrate(react_1.default.createElement(Header_1.Header, null), document.getElementById('react-root'));\r\n});\r\n\n\n//# sourceURL=webpack:///./src/client/index.jsx?");
 
 /***/ }),
 
-/***/ "./src/index.jsx":
-/*!***********************!*\
-  !*** ./src/index.jsx ***!
-  \***********************/
+/***/ "./src/shared/Header.jsx":
+/*!*******************************!*\
+  !*** ./src/shared/Header.jsx ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nvar react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\"));\r\nvar Header_1 = __importDefault(__webpack_require__(/*! ./Header */ \"./src/Header.jsx\"));\r\nwindow.addEventListener('load', function () {\r\n    react_dom_1.default.render(react_1.default.createElement(Header_1.default, null), document.getElementById('react-root'));\r\n});\r\n\n\n//# sourceURL=webpack:///./src/index.jsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Header = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nexports.Header = function () {\r\n    return (react_1.default.createElement(\"div\", null, \"Hello React\"));\r\n};\r\n\n\n//# sourceURL=webpack:///./src/shared/Header.jsx?");
 
 /***/ })
 

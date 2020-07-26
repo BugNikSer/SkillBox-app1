@@ -13,7 +13,7 @@ module.exports = {
     mode: NODE_ENV || 'development',
     entry: path.resolve('src/client/index.jsx'),
     output: {
-        path: path.resolve('../dist/client'),
+        path: path.resolve('dist/client'),
         filename: 'client.js',
     },
     module: {
