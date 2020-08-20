@@ -1,4 +1,6 @@
 const path = require('path');
+const { HotModuleReplacementPlugin } = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV === 'development';
@@ -11,21 +13,31 @@ function setupDevtool() {
 
 module.exports = {
     mode: NODE_ENV || 'development',
-    entry: path.resolve('src/client/index.jsx'),
+    entry: [
+        path.resolve('src/client/index.jsx'),
+        'webpack-hot-middleware/client?path=http://localhost:3001/static/__webpack_hmr',
+    ],
     output: {
         path: path.resolve('dist/client'),
         filename: 'client.js',
+        publicPath: '/static/',
     },
     module: {
         rules: [
             {
                 test: /\.[tj]sx?$/,
                 use: ['ts-loader'],
-            }
-        ]
+            },
+        ],
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+        alias: {
+            'react-dom': IS_DEV ? '@hot-loader/react-dom' : 'react-dom',
+        },
     },
     devtool: setupDevtool(),
-}
+    plugins: IS_DEV
+        ? [new CleanWebpackPlugin(), new HotModuleReplacementPlugin()]
+        : [],
+};
